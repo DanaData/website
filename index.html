@@ -1,1 +1,288 @@
-OK
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DanaData | Transforming Ideas into Software</title>
+    <meta name="description" content="Transforming Ideas into Software." />
+    <link rel="icon" href="https://danadata-public.s3.eu-west-2.amazonaws.com/danadata-450-sq.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            color: #333;
+        }
+        .d-red {
+            color: #cc3300;
+        }
+        .d-blue {
+            color: #0099cc;
+        }
+        .navbar {
+            padding: 1rem 1.5rem;
+            background-color: white;
+            border-top: 4px solid #0099cc;
+            box-shadow: 0 4px 6px #0099cc;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: x-large;
+        }
+        .navbar-brand img {
+            height: 50px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            color: black !important;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            background-color: #0099cc;
+            color: white !important;
+            border-radius: 5px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://danadata-public.s3.eu-west-2.amazonaws.com/code-danadata.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .hero .btn {
+            font-size: 1rem;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .hero .btn:hover {
+            transform: translateY(-5px);
+            background-color: #0056b3;
+        }
+        .about {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .about h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+        footer {
+            background-color: #0099cc;
+            color: white;
+            padding: 2rem 0;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: opacity 0.3s;
+        }
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        .dd-red {
+            color: #cc3300;
+        }
+        .dd-blue {
+            color: #0099cc;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .navbar-brand {
+                font-size: large;
+            }
+            .navbar-brand img {
+                height: 40px;
+            }
+            .about h1 {
+                font-size: 1.75rem;
+            }
+            .about p {
+                font-size: 1rem;
+            }
+            .card-title {
+                font-size: 1.1rem;
+            }
+            .card-text {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://danadata-public.s3.eu-west-2.amazonaws.com/dd-320-132.png" alt="DanaData Logo">
+                <span class="dd-red">Dana</span><span class="dd-blue">Data</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:info@danadata.net">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transforming Ideas into Software</h1>
+            <p>We craft custom software solutions tailored to your business needs.</p>
+            <a href="#services" class="btn btn-primary">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h1>Welcome to DanaData</h1>
+            <p>Our team of experienced, innovative full-stack web and mobile app developers has the expertise to inspire, connect, and deliver, crafting the perfect solution tailored to your needs.</p>
+            <p>We are a small business and absolutely love what we do. Our motto is:</p>
+            <p><em>"Transforming Ideas into Software"</em></p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                            <h5 class="card-title">Custom Software Development</h5>
+                            <p class="card-text">We design and develop bespoke software solutions tailored to your unique business requirements, ensuring efficiency, scalability, and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Mobile App Development</h5>
+                            <p class="card-text">We create intuitive, user-friendly mobile applications that deliver seamless experiences across iOS and Android platforms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Application Development</h5>
+                            <p class="card-text">We build scalable, secure, and high-performance web applications that empower your business to grow and thrive online.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">API Integration and Development</h5>
+                            <p class="card-text">We provide seamless integration with third-party systems, enabling smooth data flow and enhanced functionality for your applications.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">IT Consulting and Support</h5>
+                            <p class="card-text">Our experts offer strategic IT consulting and ongoing support to help you navigate complex challenges and optimize your technology infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">AI, Crypto, Security etc..</h5>
+                            <p class="card-text">If we can’t directly assist, we’ll connect you with trusted professionals in specialized fields like artificial intelligence, blockchain, cybersecurity, and beyond. Your success is our priority.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="mb-3">&copy; 2025 DanaData. All rights reserved.</p>
+            <div class="social-links mb-3">
+                <a href="https://www.linkedin.com/company/danadataltd" target="_blank">LinkedIn</a>
+                <a href="mailto:info@danadata.net">Email</a>
+            </div>
+            <p><a href="#contact" class="text-white">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
