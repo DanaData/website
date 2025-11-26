@@ -4,8 +4,8 @@
   "description": "Transforming Ideas into Software",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0099cc",
-  "theme_color": "#0099cc",
+  "background_color": "#0077dd",
+  "theme_color": "#0077dd",
   "icons": [
     {
       "src": "https://danadata-public.s3.eu-west-2.amazonaws.com/danadata-512-c.png",
