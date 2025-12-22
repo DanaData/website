@@ -21,11 +21,8 @@
         .dd-blue {
             color: #0077dd;
         }
-        .dd-white {
-            color: #ffffff;
-        }
         .dd-black {
-            color: #000000;
+            color: #000;
         }
         .btn-primary {
             background-color: #0077dd !important;
@@ -40,8 +37,9 @@
         }
         .navbar {
             padding: 1rem 1.5rem;
-            background-color: #000000;
-            box-shadow: 0 2px 6px lightgray;
+            background-color: white;
+            border-top: 4px solid #0077dd;
+            box-shadow: 0 4px 6px #0077dd;
         }
         .navbar-brand {
             display: flex;
@@ -61,26 +59,19 @@
             transform: scale(1.1);
         }
         .navbar-nav .nav-link {
-            margin-right: 5px;
             font-size: 1.1rem;
-            color: #f8f8f8;
+            color: black !important;
             padding-left: 1rem;
             padding-right: 1rem;
             transition: color 0.3s, background-color 0.3s;
         }
         .navbar-nav .nav-link:hover {
             background-color: #0077dd;
+            color: white !important;
             border-radius: 5px;
         }
-        .navbar-toggler {
-            background-color: #ccc;
-        }
-        .navbar-toggler-icon {
-            width: 1em;
-            height: 1em;
-        }
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('code-danadata.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('code-danadata.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -149,18 +140,18 @@
             color: #555;
         }
         footer {
-            background-color: #000000;
-            color: #f8f8f8;
+            background-color: #0077dd;
+            color: white;
             padding: 2rem 0;
         }
         footer a {
-            color: #f8f8f8;
+            color: white;
             text-decoration: none;
             margin: 0 0.5rem;
             transition: opacity 0.3s;
         }
         footer a:hover {
-            opacity: 0.5;
+            opacity: 0.8;
         }
 
         /* Responsive Adjustments */
@@ -200,8 +191,8 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="https://www.danadata.net">
-                <img src="danadata-nb-200.png" alt="DanaData Logo" loading="lazy">
-                <span class="dd-white dd-bold">DANA</span><span class="dd-white">DATA</span>
+                <img src="danadata-black.png" alt="DanaData Logo" loading="lazy">
+                <span class="dd-black dd-bold">DANA</span><span class="dd-black">DATA</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
