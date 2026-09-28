@@ -312,11 +312,55 @@
   <section class="pb-5" id="contact">
     <div class="container">
       <div class="dd-contact">
-        <h2>Have a project in mind?</h2>
-        <p class="fs-5 mb-4">Tell us what you're building and we'll get back to you.</p>
-        <div class="d-flex flex-wrap justify-content-center gap-2">
-          <a href="mailto:info@danadata.net" class="btn btn-light btn-lg"><i class="bi bi-envelope me-2"></i>info@danadata.net</a>
-          <a href="https://www.linkedin.com/company/danadataltd" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-5">
+            <h2>Have a project in mind?</h2>
+            <p class="fs-5 mb-4">Tell us what you're building, or ask about DanaTel or DataLion. We'll reply by email.</p>
+            <ul class="dd-contact-links">
+              <li><i class="bi bi-envelope"></i> <a href="mailto:info@danadata.net">info@danadata.net</a></li>
+              <li><i class="bi bi-linkedin"></i> <a href="https://www.linkedin.com/company/danadataltd" target="_blank" rel="noopener">DanaData on LinkedIn</a></li>
+              <li><i class="bi bi-geo-alt"></i> Manchester, UK</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-7">
+            <form class="dd-form" id="contact-form" action="https://formspree.io/f/xwlpwdnd" method="POST">
+              <input type="hidden" name="_subject" id="contact-subject" value="New message from danadata.net">
+              <!-- Left empty by people; bots fill it in and Formspree drops the message -->
+              <input type="text" name="_gotcha" class="dd-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="contact-name" class="form-label">Your name</label>
+                  <input type="text" class="form-control" id="contact-name" name="name" autocomplete="name" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="contact-email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="contact-email" name="email" autocomplete="email" required>
+                </div>
+                <div class="col-12">
+                  <label for="contact-topic" class="form-label">What's it about?</label>
+                  <select class="form-select" id="contact-topic" name="topic">
+                    <option>A custom software project</option>
+                    <option>DanaTel</option>
+                    <option>DataLion</option>
+                    <option>Something else</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="contact-message" class="form-label">Message</label>
+                  <textarea class="form-control" id="contact-message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                  <button type="submit" class="btn btn-primary btn-lg" id="contact-submit">
+                    Send message <i class="bi bi-send ms-1"></i>
+                  </button>
+                  <small class="text-secondary">We only use your details to reply to you.</small>
+                </div>
+              </div>
+              <div class="dd-form-status" id="contact-status" role="status" aria-live="polite" hidden></div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -364,6 +408,48 @@
 </footer>
 
 <script src="bootstrap.bundle.min.js"></script>
+<script>
+  // Contact form: send to Formspree in the background and thank the visitor on the page.
+  // Without JavaScript the form still posts normally and Formspree shows its own thank-you page.
+  (function () {
+    const form = document.getElementById('contact-form');
+    const button = document.getElementById('contact-submit');
+    const status = document.getElementById('contact-status');
+
+    function showStatus(text, ok) {
+      status.textContent = text;
+      status.className = 'dd-form-status ' + (ok ? 'is-ok' : 'is-error');
+      status.hidden = false;
+    }
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      document.getElementById('contact-subject').value =
+        'danadata.net: ' + document.getElementById('contact-topic').value;
+      button.disabled = true;
+      status.hidden = true;
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {Accept: 'application/json'},
+        });
+        if (response.ok) {
+          form.reset();
+          showStatus("Thanks, your message is on its way. We'll reply by email soon.", true);
+        } else {
+          const data = await response.json().catch(function () { return {}; });
+          const detail = (data.errors || []).map(function (e) { return e.message; }).join(' ');
+          showStatus(detail || 'Sorry, something went wrong. Please email info@danadata.net instead.', false);
+        }
+      } catch (error) {
+        showStatus('Sorry, we couldn\'t send that. Please check your connection or email info@danadata.net.', false);
+      } finally {
+        button.disabled = false;
+      }
+    });
+  })();
+</script>
 <script>
   // Close the mobile menu after tapping a section link
   document.querySelectorAll('#nav a[href^="#"]').forEach(function (link) {
