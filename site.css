@@ -270,6 +270,24 @@ h1, h2, h3, h4 { color: var(--dd-ink); letter-spacing: -0.02em; }
 .dd-footer a:hover { color: var(--dd-blue); }
 .dd-footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--dd-border); font-size: 0.875rem; color: var(--dd-muted); }
 
+/* ── Legal pages ─────────────────────────────────────────── */
+.dd-legal { padding: 4rem 0 5rem; }
+.dd-legal .container { max-width: 760px; }
+.dd-legal h1 { font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 0.25rem; }
+.dd-legal-updated { color: var(--dd-muted); margin-bottom: 2rem; }
+.dd-legal h2 { margin: 2rem 0 0.5rem; font-size: 1.2rem; font-weight: 700; }
+.dd-legal p { color: var(--dd-text); line-height: 1.7; }
+.dd-legal-products {
+  margin: 1.75rem 0 0.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(0, 119, 221, 0.25);
+  border-radius: var(--dd-radius);
+  background: var(--dd-blue-soft);
+}
+.dd-legal-products ul { list-style: none; padding: 0; margin: 0; }
+.dd-legal-products li { display: flex; align-items: center; gap: 0.6rem; padding: 0.3rem 0; font-weight: 600; }
+.dd-legal-products img { border-radius: 6px; }
+
 /* ── Small screens ───────────────────────────────────────── */
 @media (max-width: 991.98px) {
   .dd-hero { padding: 4rem 0 3.5rem; }
