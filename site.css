@@ -1,0 +1,272 @@
+/* DanaData — site styles (on top of Bootstrap 5) */
+
+:root {
+  --dd-blue: #0077dd;
+  --dd-blue-dark: #005bb5;
+  --dd-blue-soft: #e8f2fc;
+  --dd-ink: #0b1220;
+  --dd-text: #1f2937;
+  --dd-muted: #5b6475;
+  --dd-bg-soft: #f5f7fb;
+  --dd-border: #e6e9f0;
+  --dd-radius: 16px;
+  --dd-shadow: 0 1px 2px rgba(11, 18, 32, 0.04), 0 8px 24px rgba(11, 18, 32, 0.06);
+  --dd-shadow-lg: 0 24px 60px rgba(11, 18, 32, 0.12);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--dd-text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--dd-blue); }
+a:hover { color: var(--dd-blue-dark); }
+
+h1, h2, h3, h4 { color: var(--dd-ink); letter-spacing: -0.02em; }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn { font-weight: 600; border-radius: 12px; padding: 0.75rem 1.4rem; }
+.btn-primary { background: var(--dd-blue); border-color: var(--dd-blue); box-shadow: 0 6px 16px rgba(0, 119, 221, 0.25); }
+.btn-primary:hover, .btn-primary:focus { background: var(--dd-blue-dark); border-color: var(--dd-blue-dark); }
+.btn-outline-dark { border-color: var(--dd-border); color: var(--dd-ink); background: #fff; }
+.btn-outline-dark:hover { background: var(--dd-bg-soft); border-color: var(--dd-border); color: var(--dd-ink); }
+
+/* ── Header ──────────────────────────────────────────────── */
+.dd-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--dd-border);
+}
+.dd-header .navbar { padding: 0.75rem 0; }
+
+.dd-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--dd-ink);
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+.dd-brand:hover { color: var(--dd-ink); }
+.dd-brand img { width: 40px; height: 40px; }
+.dd-brand strong { font-weight: 800; }
+.dd-brand span { font-weight: 400; }
+
+.dd-header .nav-link {
+  color: var(--dd-muted);
+  font-weight: 500;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 10px;
+}
+.dd-header .nav-link:hover { color: var(--dd-ink); background: var(--dd-bg-soft); }
+
+/* ── Hero ────────────────────────────────────────────────── */
+.dd-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0 5rem;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(0, 119, 221, 0.14), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(0, 180, 216, 0.10), transparent 40%),
+    #fff;
+}
+.dd-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(11, 18, 32, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 80%);
+  pointer-events: none;
+}
+.dd-hero .container { position: relative; }
+
+.dd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(0, 119, 221, 0.25);
+  border-radius: 999px;
+  background: var(--dd-blue-soft);
+  color: var(--dd-blue-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.dd-hero h1 {
+  margin: 1.25rem 0 1.25rem;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+.dd-gradient-text {
+  background: linear-gradient(135deg, #0077dd 0%, #00b4d8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.dd-lead { max-width: 560px; font-size: 1.15rem; line-height: 1.65; color: var(--dd-muted); }
+
+.dd-hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+
+/* Product preview stack in the hero */
+.dd-stack { position: relative; max-width: 440px; margin: 0 auto; padding: 2.25rem 1.25rem; }
+.dd-stack::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0, 119, 221, 0.14);
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(0, 119, 221, 0.12), rgba(0, 180, 216, 0.05));
+  transform: rotate(-3deg);
+}
+.dd-stack-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--dd-border);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--dd-shadow-lg);
+  color: var(--dd-text);
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+.dd-stack-card:hover { transform: translateY(-4px); color: var(--dd-text); }
+.dd-stack-card + .dd-stack-card { margin-top: 1rem; margin-left: 2rem; margin-right: -0.75rem; }
+.dd-stack-card + .dd-stack-card + .dd-stack-card { margin-left: 0; margin-right: 0; }
+.dd-stack-card img { flex-shrink: 0; width: 56px; height: 56px; border-radius: 14px; }
+.dd-stack-card strong { display: block; color: var(--dd-ink); font-size: 1.1rem; }
+.dd-stack-card small { color: var(--dd-muted); }
+.dd-stack-card > .bi:last-child { margin-left: auto; color: var(--dd-muted); }
+.dd-stack-card-next { border-style: dashed; border-color: rgba(0, 119, 221, 0.4); background: rgba(255, 255, 255, 0.7); box-shadow: none; }
+.dd-stack-card-next .dd-icon { width: 56px; height: 56px; margin: 0; border-radius: 14px; }
+
+/* ── Sections ────────────────────────────────────────────── */
+.dd-section { padding: 6rem 0; }
+.dd-section-soft { background: var(--dd-bg-soft); }
+.dd-section-head { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
+.dd-kicker { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dd-blue); }
+.dd-section-head h2 { margin: 0.5rem 0 0.75rem; font-size: clamp(1.9rem, 3.5vw, 2.6rem); font-weight: 800; }
+.dd-section-head p { font-size: 1.1rem; color: var(--dd-muted); }
+
+/* Products */
+.dd-product {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: 1px solid var(--dd-border);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: var(--dd-shadow);
+}
+.dd-product-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+.dd-product-head img { width: 64px; height: 64px; border-radius: 16px; }
+.dd-product-head h3 { margin: 0; font-size: 1.5rem; font-weight: 800; }
+.dd-product-head p { margin: 0; color: var(--dd-muted); }
+.dd-product > p { color: var(--dd-muted); line-height: 1.65; }
+.dd-checks { list-style: none; padding: 0; margin: 0.5rem 0 1.75rem; }
+.dd-checks li { display: flex; gap: 0.6rem; padding: 0.35rem 0; }
+.dd-checks .bi { color: var(--dd-blue); }
+.dd-product .btn { margin-top: auto; align-self: flex-start; }
+
+/* Services */
+.dd-service {
+  height: 100%;
+  padding: 1.75rem;
+  border: 1px solid var(--dd-border);
+  border-radius: var(--dd-radius);
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.dd-service:hover { border-color: rgba(0, 119, 221, 0.35); box-shadow: var(--dd-shadow); transform: translateY(-3px); }
+.dd-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: var(--dd-blue-soft);
+  color: var(--dd-blue);
+  font-size: 1.4rem;
+}
+.dd-service h3 { font-size: 1.15rem; font-weight: 700; }
+.dd-service p { margin: 0; color: var(--dd-muted); line-height: 1.6; }
+
+/* Why DanaData */
+.dd-point { display: flex; gap: 1rem; }
+.dd-point .dd-icon { flex-shrink: 0; margin: 0; }
+.dd-point h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem; }
+.dd-point p { margin: 0; color: var(--dd-muted); line-height: 1.6; }
+
+/* About */
+.dd-about-card {
+  padding: 2.5rem;
+  border-radius: 24px;
+  background: var(--dd-ink);
+  color: #cbd5e1;
+}
+.dd-about-card img { width: 72px; height: 72px; }
+.dd-about-card h3 { color: #fff; font-weight: 800; }
+.dd-facts { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.dd-facts li { display: flex; gap: 0.6rem; padding: 0.45rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.dd-facts .bi { color: #5aa9ec; }
+
+/* Contact band */
+.dd-contact {
+  padding: 4rem 2rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(0, 180, 216, 0.35), transparent 45%),
+    linear-gradient(135deg, #0077dd 0%, #0b3d91 100%);
+  color: #e6f0fb;
+  text-align: center;
+}
+.dd-contact h2 { color: #fff; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; }
+.dd-contact .btn-light { color: var(--dd-blue-dark); }
+.dd-contact .btn-outline-light:hover { color: var(--dd-blue-dark); }
+
+/* ── Footer ──────────────────────────────────────────────── */
+.dd-footer { padding: 4rem 0 2rem; border-top: 1px solid var(--dd-border); background: #fff; }
+.dd-footer h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dd-muted); margin-bottom: 1rem; }
+.dd-footer ul { list-style: none; padding: 0; margin: 0; }
+.dd-footer li { margin-bottom: 0.5rem; }
+.dd-footer a { color: var(--dd-text); text-decoration: none; }
+.dd-footer a:hover { color: var(--dd-blue); }
+.dd-footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--dd-border); font-size: 0.875rem; color: var(--dd-muted); }
+
+/* ── Small screens ───────────────────────────────────────── */
+@media (max-width: 991.98px) {
+  .dd-hero { padding: 4rem 0 3.5rem; }
+  .dd-stack { margin-top: 0.5rem; }
+  .dd-stack-card + .dd-stack-card { margin-left: 1.5rem; margin-right: 0; }
+  .dd-header .navbar-collapse { padding: 0.75rem 0; }
+}
+
+@media (max-width: 575.98px) {
+  .dd-section { padding: 4rem 0; }
+  .dd-product, .dd-about-card { padding: 1.5rem; }
+  .dd-hero-actions .btn { width: 100%; }
+  .dd-contact { padding: 3rem 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .dd-stack-card, .dd-service { transition: none; }
+}

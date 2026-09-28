@@ -1,311 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DanaData | Transforming Ideas into Software</title>
-    <meta name="description" content="DanaData specialises in custom software, web, and mobile development, transforming ideas into scalable, high-performance solutions.">
-    <link rel="icon" href="icon.png" />
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap-icons.css">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#0077dd">
-    <style>
-        body {
-            font-family: Verdana, sans-serif;
-            color: #333;
-        }
-        .dd-color {
-            color: #0077dd;
-        }
-        .dd-blue {
-            color: #0077dd;
-        }
-        .dd-black {
-            color: #000;
-        }
-        .btn-primary {
-            background-color: #0077dd !important;
-            border-color: #0077dd !important;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DanaData | Software products and custom development, Manchester UK</title>
+  <meta name="description" content="DanaData is a Manchester-based software company. We build and run DanaTel and DataLion, and create custom web, mobile and AI software for businesses.">
+  <link rel="canonical" href="https://www.danadata.net/">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ffffff">
 
-        .btn-primary:hover, 
-        .btn-primary:focus, 
-        .btn-primary:active {
-            background-color: #0033DD !important;
-            border-color: #0033DD !important;
-        }
-        .navbar {
-            padding: 1rem 1.5rem;
-            background-color: white;
-            border-top: 4px solid #0077dd;
-            box-shadow: 0 4px 6px #0077dd;
-        }
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-size: 30px;
-        }
-        .navbar-brand .dd-bold {
-            font-weight: 800;
-        }
-        .navbar-brand img {
-            height: 50px;
-            margin-right: 10px;
-            transition: transform 0.3s;
-        }
-        .navbar-brand img:hover {
-            transform: scale(1.1);
-        }
-        .navbar-nav .nav-link {
-            font-size: 1.1rem;
-            color: black !important;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            transition: color 0.3s, background-color 0.3s;
-        }
-        .navbar-nav .nav-link:hover {
-            background-color: #0077dd;
-            color: white !important;
-            border-radius: 5px;
-        }
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('code-danadata.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 6rem 0;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        .hero .btn {
-            font-size: 1rem;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-        .hero .btn:hover {
-            transform: translateY(-5px);
-            background-color: #0077dd;
-        }
-        .about {
-            padding: 4rem 0;
-            background-color: #f8f9fa;
-            text-align: center;
-        }
-        .about h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        .about p {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: #555;
-        }
-        .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
-        .card-body {
-            padding: 1.5rem;
-        }
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        .card-text {
-            font-size: 1rem;
-            color: #555;
-        }
-        footer {
-            background-color: #0077dd;
-            color: white;
-            padding: 2rem 0;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            transition: opacity 0.3s;
-        }
-        footer a:hover {
-            opacity: 0.8;
-        }
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DanaData | Transforming ideas into software">
+  <meta property="og:description" content="Makers of DanaTel and DataLion. Custom web, mobile and AI software from Manchester, UK.">
+  <meta property="og:url" content="https://www.danadata.net/">
+  <meta property="og:image" content="https://www.danadata.net/icon.png">
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 4rem 0;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .navbar-brand {
-                font-size: large;
-            }
-            .navbar-brand img {
-                height: 40px;
-            }
-            .about h1 {
-                font-size: 1.75rem;
-            }
-            .about p {
-                font-size: 1rem;
-            }
-            .card-title {
-                font-size: 1.1rem;
-            }
-            .card-text {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.css" rel="stylesheet">
+  <link href="site.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DanaData",
+    "legalName": "Danadata Ltd",
+    "url": "https://www.danadata.net",
+    "logo": "https://www.danadata.net/icon.png",
+    "email": "info@danadata.net",
+    "address": {"@type": "PostalAddress", "addressLocality": "Manchester", "addressCountry": "GB"},
+    "sameAs": ["https://www.linkedin.com/company/danadataltd"],
+    "brand": [
+      {"@type": "Brand", "name": "DanaTel", "url": "https://danatel.net"},
+      {"@type": "Brand", "name": "DataLion", "url": "https://www.datalion.ai"}
+    ]
+  }
+  </script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="https://www.danadata.net">
-                <img src="danadata-black.png" alt="DanaData Logo" loading="lazy">
-                <span class="dd-black dd-bold">DANA</span><span class="dd-black">DATA</span>
+
+<!-- Header -->
+<header class="dd-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="dd-brand" href="/">
+        <img src="danadata-black.png" alt="" width="40" height="40">
+        <span><strong>Dana</strong>Data</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary btn-sm px-3" href="#contact">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="dd-hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <span class="dd-eyebrow"><i class="bi bi-geo-alt-fill"></i> Software company · Manchester, UK</span>
+          <h1>Transforming ideas into <span class="dd-gradient-text">software</span>.</h1>
+          <p class="dd-lead">
+            We build and run our own products, DanaTel and DataLion, and create custom web,
+            mobile and AI software for businesses that want it done properly.
+          </p>
+          <div class="dd-hero-actions">
+            <a href="#products" class="btn btn-primary btn-lg">Our products</a>
+            <a href="#contact" class="btn btn-outline-dark btn-lg">Start a project</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="dd-stack">
+            <a class="dd-stack-card" href="https://danatel.net" target="_blank" rel="noopener">
+              <img src="danatel-icon.png" alt="" width="56" height="56">
+              <span>
+                <strong>DanaTel</strong>
+                <small>International calls from your browser</small>
+              </span>
+              <i class="bi bi-arrow-up-right"></i>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="mailto:info@danadata.net">Contact</a></li>
-                </ul>
+            <a class="dd-stack-card" href="https://www.datalion.ai" target="_blank" rel="noopener">
+              <img src="danadata-nb-200.png" alt="" width="56" height="56">
+              <span>
+                <strong>DataLion</strong>
+                <small>One question, many AI views</small>
+              </span>
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a class="dd-stack-card dd-stack-card-next" href="#contact">
+              <span class="dd-icon"><i class="bi bi-plus-lg"></i></span>
+              <span>
+                <strong>Your product</strong>
+                <small>Let's build it together</small>
+              </span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="dd-section dd-section-soft" id="products">
+    <div class="container">
+      <div class="dd-section-head">
+        <span class="dd-kicker">Our products</span>
+        <h2>Software we build and run ourselves</h2>
+        <p>Two products we design, build and operate ourselves, from the first line of code to customer support.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="dd-product">
+            <div class="dd-product-head">
+              <img src="danatel-icon.png" alt="DanaTel" width="64" height="64">
+              <div>
+                <h3>DanaTel</h3>
+                <p>International calls from your browser</p>
+              </div>
             </div>
+            <p>Call family and friends abroad from a phone or computer, with no app to install and no contract.</p>
+            <ul class="dd-checks">
+              <li><i class="bi bi-check-circle-fill"></i> Works in any modern browser, on any device</li>
+              <li><i class="bi bi-check-circle-fill"></i> Pay-as-you-go credit, billed in 6-second steps</li>
+              <li><i class="bi bi-check-circle-fill"></i> Secure card payments through Stripe</li>
+            </ul>
+            <a href="https://danatel.net" class="btn btn-primary" target="_blank" rel="noopener">
+              Visit danatel.net <i class="bi bi-arrow-up-right ms-1"></i>
+            </a>
+          </article>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Transforming Ideas into Software</h1>
-            <p>We craft custom software solutions tailored to your business needs.</p>
-            <a href="#services" class="btn btn-primary">Explore Our Services</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="mb-4"><i class="bi bi-building dd-blue"></i> About <b>DanaData</b></h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <p class="mb-4"><i class="bi bi-lightbulb dd-blue"></i> At <b>DanaData</b>, we are passionate about transforming ideas into powerful software solutions. With extensive expertise in full-stack web and mobile development, we specialise in creating scalable, high-performance applications tailored to your business needs.</p>
-
-                    <p class="mb-4"><i class="bi bi-code-slash dd-blue"></i> As a dedicated technology partner, we thrive on innovation, problem-solving, and delivering results that drive success. Whether it's custom software, mobile apps, API integrations, or cutting-edge digital solutions, we ensure every project is crafted with precision and excellence.</p>
-                </div>
+        <div class="col-lg-6">
+          <article class="dd-product">
+            <div class="dd-product-head">
+              <img src="danadata-nb-200.png" alt="DataLion" width="64" height="64">
+              <div>
+                <h3>DataLion</h3>
+                <p>One question, many AI views</p>
+              </div>
             </div>
-            <p class="mt-4"><i class="bi bi-quote dd-color"></i> <em class="dd-color">"Transforming Ideas into Software"</em></p>
+            <p>Ask once and compare answers from leading AI models side by side, to think more clearly and check what they agree on.</p>
+            <ul class="dd-checks">
+              <li><i class="bi bi-check-circle-fill"></i> Answers from GPT, Gemini, Grok and more</li>
+              <li><i class="bi bi-check-circle-fill"></i> On the web, iOS and Android</li>
+              <li><i class="bi bi-check-circle-fill"></i> Free to try</li>
+            </ul>
+            <a href="https://www.datalion.ai" class="btn btn-primary" target="_blank" rel="noopener">
+              Visit datalion.ai <i class="bi bi-arrow-up-right ms-1"></i>
+            </a>
+          </article>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Services</h2>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card shadow">
-                        <div class="card-body">
-                            <i class="bi bi-code-slash fs-1 dd-blue"></i>
-                            <h5 class="card-title">Custom Software Development</h5>
-                            <p class="card-text">We design and develop bespoke software solutions tailored to your unique business requirements, ensuring efficiency, scalability, and innovation.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card shadow">
-                        <div class="card-body">
-                            <i class="bi bi-phone fs-1 dd-blue"></i>
-                            <h5 class="card-title">Mobile App Development</h5>
-                            <p class="card-text">We create intuitive, user-friendly mobile applications that deliver seamless experiences across iOS and Android platforms.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card shadow">
-                        <div class="card-body">
-                            <i class="bi bi-globe fs-1 dd-blue"></i>
-                            <h5 class="card-title">Web Application Development</h5>
-                            <p class="card-text">We build scalable, secure, and high-performance web applications that empower your business to grow and thrive online.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <i class="bi bi-plug fs-1 dd-blue"></i>
-                            <h5 class="card-title">API Integration and Development</h5>
-                            <p class="card-text">We provide seamless integration with third-party systems, enabling smooth data flow and enhanced functionality for your applications.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <i class="bi bi-gear fs-1 dd-blue"></i>
-                            <h5 class="card-title">IT Consulting and Support</h5>
-                            <p class="card-text">Our experts offer strategic IT consulting and ongoing support to help you navigate complex challenges and optimize your technology infrastructure.</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="card shadow h-100">
-                        <div class="card-body">
-                            <i class="bi bi-shield-lock fs-1 dd-blue"></i>
-                            <h5 class="card-title">AI, Crypto, Security etc..</h5>
-                            <p class="card-text">If we can’t directly assist, we’ll connect you with trusted professionals in specialised fields like artificial intelligence, blockchain, cybersecurity, and beyond. Your success is our priority.</p>
-                        </div>
-                    </div>
-                </div>
+  <!-- Services -->
+  <section class="dd-section" id="services">
+    <div class="container">
+      <div class="dd-section-head">
+        <span class="dd-kicker">Services</span>
+        <h2>Custom software, built to last</h2>
+        <p>From a first idea to a product in your customers' hands, and the support that keeps it running.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="dd-service">
+            <span class="dd-icon"><i class="bi bi-code-slash"></i></span>
+            <h3>Custom software</h3>
+            <p>Bespoke systems designed around how your business actually works, built to scale as you grow.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dd-service">
+            <span class="dd-icon"><i class="bi bi-window-stack"></i></span>
+            <h3>Web applications</h3>
+            <p>Fast, secure web apps and customer portals, from dashboards to payments and subscriptions.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dd-service">
+            <span class="dd-icon"><i class="bi bi-phone"></i></span>
+            <h3>Mobile apps</h3>
+            <p>iOS and Android apps with a polished experience, published and maintained in the app stores.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dd-service">
+            <span class="dd-icon"><i class="bi bi-stars"></i></span>
+            <h3>AI integration</h3>
+            <p>Practical use of large language models in your products and workflows, with sensible guardrails.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dd-service">
+            <span class="dd-icon"><i class="bi bi-plug"></i></span>
+            <h3>APIs and integrations</h3>
+            <p>Connect payments, telephony, CRMs and third-party services so your data flows where it's needed.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="dd-service">
+            <span class="dd-icon"><i class="bi bi-life-preserver"></i></span>
+            <h3>Consulting and support</h3>
+            <p>Technical advice, code reviews and ongoing support. For specialist areas we bring in trusted partners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why DanaData -->
+  <section class="dd-section dd-section-soft" id="why">
+    <div class="container">
+      <div class="dd-section-head">
+        <span class="dd-kicker">Why DanaData</span>
+        <h2>We build like it's our own product</h2>
+        <p>Because most of the time, it is.</p>
+      </div>
+
+      <div class="row g-4 g-lg-5">
+        <div class="col-md-6">
+          <div class="dd-point">
+            <span class="dd-icon"><i class="bi bi-rocket-takeoff"></i></span>
+            <div>
+              <h3>We run what we build</h3>
+              <p>DanaTel and DataLion run in production on the same stack we use for clients: payments, real-time voice, AI and mobile.</p>
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p class="mb-3">&copy; 2025 DanaData. All rights reserved.</p>
-            <div class="social-links mb-3">
-                <a href="https://www.linkedin.com/company/danadataltd" target="_blank">LinkedIn</a>
-                <a href="mailto:info@danadata.net">Email</a>
+        <div class="col-md-6">
+          <div class="dd-point">
+            <span class="dd-icon"><i class="bi bi-layers"></i></span>
+            <div>
+              <h3>Full stack, end to end</h3>
+              <p>Design, back end, front end, mobile, hosting and monitoring, handled by one team.</p>
             </div>
-            <p><a href="mailto:info@danadata.net" class="text-white">Contact Us</a></p>
+          </div>
         </div>
-    </footer>
+        <div class="col-md-6">
+          <div class="dd-point">
+            <span class="dd-icon"><i class="bi bi-shield-check"></i></span>
+            <div>
+              <h3>Secure by default</h3>
+              <p>Sensible data handling, encrypted connections and trusted providers like Stripe for payments.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dd-point">
+            <span class="dd-icon"><i class="bi bi-chat-dots"></i></span>
+            <div>
+              <h3>Straight talking</h3>
+              <p>Clear estimates, regular updates and honest advice, including when something isn't worth building.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="bootstrap.bundle.min.js"></script>
+  <!-- About -->
+  <section class="dd-section" id="about">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <span class="dd-kicker">About us</span>
+          <h2 class="mt-2 mb-3 fw-bold">Built with a product mindset</h2>
+          <p class="text-secondary fs-5">
+            DanaData is a software company based in Manchester, UK. We build software for
+            clients, and we design, build and run our own products.
+          </p>
+          <p class="text-secondary">
+            That means we know what it takes to keep software working for real customers:
+            payments, support, security and steady improvement long after launch.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="dd-about-card">
+            <img src="danadata-nb-200.png" alt="" width="72" height="72" class="rounded-4 mb-3">
+            <h3>Danadata Ltd</h3>
+            <ul class="dd-facts">
+              <li><i class="bi bi-geo-alt"></i> Manchester, United Kingdom</li>
+              <li><i class="bi bi-building"></i> Registered in England and Wales</li>
+              <li><i class="bi bi-envelope"></i> <a href="mailto:info@danadata.net" class="link-light">info@danadata.net</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="pb-5" id="contact">
+    <div class="container">
+      <div class="dd-contact">
+        <h2>Have a project in mind?</h2>
+        <p class="fs-5 mb-4">Tell us what you're building and we'll get back to you.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <a href="mailto:info@danadata.net" class="btn btn-light btn-lg"><i class="bi bi-envelope me-2"></i>info@danadata.net</a>
+          <a href="https://www.linkedin.com/company/danadataltd" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="dd-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <a class="dd-brand mb-3" href="/">
+          <img src="danadata-black.png" alt="" width="40" height="40">
+          <span><strong>Dana</strong>Data</span>
+        </a>
+        <p class="text-secondary mb-0" style="max-width: 360px;">Transforming ideas into software. Makers of DanaTel and DataLion.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://danatel.net" target="_blank" rel="noopener">DanaTel</a></li>
+          <li><a href="https://www.datalion.ai" target="_blank" rel="noopener">DataLion</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:info@danadata.net">info@danadata.net</a></li>
+          <li><a href="https://www.linkedin.com/company/danadataltd" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dd-footer-bottom">
+      &copy; 2026 Danadata Ltd. Registered in England and Wales.
+    </div>
+  </div>
+</footer>
+
+<script src="bootstrap.bundle.min.js"></script>
+<script>
+  // Close the mobile menu after tapping a section link
+  document.querySelectorAll('#nav a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      const menu = bootstrap.Collapse.getInstance(document.getElementById('nav'));
+      if (menu) menu.hide();
+    });
+  });
+</script>
 </body>
 </html>
